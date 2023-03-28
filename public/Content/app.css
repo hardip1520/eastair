@@ -1,1 +1,9 @@
 /* custom css*/
+.position-relative.overflow-hidden.text-center.bg-light {
+    background-image: url('../Assets/images/1280x720-Airline-Hero-Desktop.jpg');
+    height: 28em;
+}
+    /* .navbar>.container-fluid{
+        margin-right: -25em;
+
+    } */

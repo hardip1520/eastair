@@ -1,0 +1,71 @@
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+  
+<!--content for the Add page-->
+<div class = "container">
+    <div class = "row">
+        <div class ="offset-md-3 col-md-6">
+        <h1><%= title %></h1>
+        <form class = "form" method="POST">
+            <div class ="form group">
+                <label for="nameTextField">Ailine Name</label>
+                <input type="text" class="form control"
+                id="nameTextField"
+                placeholder="Enter the Airline Title"
+                name="name"
+                value="<%=airline.name%>"
+                required>
+            </div>
+
+            <div class ="form group">
+                <label for="authorTextField">Departure</label>
+                <input type="text" class="form control"
+                id="authorTextField"
+                placeholder="Enter the Departure"
+                name="author" 
+                value="<%=airline.departure%>"
+                required>
+            </div>
+
+            <div class ="form group">
+                <label for="publishedTextField">Arrival</label>
+                <input type="text" class="form control"
+                id="publishedTextField"
+                placeholder="Enter the year of publication"
+                name="published" 
+                value="<%=airline.arrival%>"
+                required>
+            </div>
+
+            <div class ="form group">
+                <label for="descriptionTextArea">Class</label>
+                <select name="class" id="class">
+                    <option value="<%=airline.class%>">Economy</option>
+                    <option value="<%=airline.class%>">Business</option>
+                    <option value="<%=airline.class%>">Primium Economy</option>
+                    <option value="<%=airline.class%>">First Class</option>
+                  </select>
+            </div>
+
+            <div class ="form group">
+                <label for="PriceTextField">Price</label>
+                <input type="number" class="form control"
+                id="priceTextField"
+                placeholder="Enter the Flight's price"
+                name="price" 
+                value="<%=airline.price%>"
+                required>
+            </div>
+            <button class = "btn btn-primary" type="submit"><i class ="fas fa-edit"></i>submit</button>
+            <a href='/airlineList' class="btn btn-warning"><i class="fas fa-undo"></i>cancel</a>  
+        
+        </form>
+        </div>
+        </div>
+    </div>
+
+
+  
+   <%-include ../partials/bottom_nav.ejs%>
+<%-include ../partials/footer.ejs%>   
+

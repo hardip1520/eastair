@@ -1,0 +1,41 @@
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+  
+   <p>Welcome to <%= title %></p>
+<main class="container">
+<div class="row">
+    <div class="col-md-offset-3 col md-8">
+        <h1><%= title %></h1>
+        <a href="/AirlineList/add" class="btn btn-primary" role="button">
+            <i class ="fas fa-plus-circle"></i>Add Incident</a>
+        <br>
+        <table class = "table table-bordered table-striped table-hover">
+            <tr>
+                <th class="text-content col-2">Date</th>
+                <th class="text-content col-2">Flight Number</th>
+                <th class="text-content col-3">Incident Description</th>
+                <th class="col-6">Severity</th>
+                <th class="text-content col-1">Status</th>
+                <th class="text-content col-1"></th>
+                <th class="text-content col-1"></th>
+                </tr>
+           <% for(let count = 0; count<AirlineList.length; count++){ %>
+            <tr>
+                <td class = "text-center col-2"><%=AirlineList[count].name%></td>
+                <td class = "text-center col-2"><%=AirlineList[count].departure%></td>
+                <td class = "text-center col-1"><%=AirlineList[count].arrival%></td>
+                <td class = "col-6"><%=AirlineList[count].class%></td>
+                <td class = "text-center col-1"><%=AirlineList[count].price%></td>
+                <td class ="text-center col-1"><a href="/airlineList/edit/<%=AirlineList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+                <td class ="text-center col-1"><a href="/airlineList/delete/<%=AirlineList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>    
+            </tr>
+                <%}%>
+            </table>
+
+        </div>
+    </div>
+    </main>
+
+   <%-include ../partials/bottom_nav.ejs%>
+<%-include ../partials/footer.ejs%>   
+
