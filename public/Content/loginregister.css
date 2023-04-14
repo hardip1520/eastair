@@ -1,0 +1,59 @@
+main.container-l {
+    background: turquoise;
+    width: 59em;
+    display: block;
+    margin: 70px auto;
+    padding: 35px;
+}
+.container-l {
+    background: turquoise;
+    width: 59em;
+    display: block;
+    margin: 70px auto;
+    padding: 35px;
+}
+
+.row-a{
+    display: flex;
+    align-items: center;
+}
+
+.submit {
+    padding: 2em 0;
+}
+
+.row-l {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+fieldset.form-group.text-right {
+    margin: 26px 0;
+}
+main.container-c {
+    background: #c3daec;
+    margin: 56px 18px;
+    padding: 40px 3px;
+}
+tr {
+    background: azure;
+}
+a.btn.btn-primary {
+    margin: 10px 0;
+}
+
+.form.group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+}

@@ -21,11 +21,11 @@
                 </tr>
            <% for(let count = 0; count<AirlineList.length; count++){ %>
             <tr>
-                <td class = "text-center col-2"><%=AirlineList[count].name%></td>
-                <td class = "text-center col-2"><%=AirlineList[count].departure%></td>
-                <td class = "text-center col-1"><%=AirlineList[count].arrival%></td>
-                <td class = "col-6"><%=AirlineList[count].class%></td>
-                <td class = "text-center col-1"><%=AirlineList[count].price%></td>
+                <td class = "text-center col-2"><%=AirlineList[count].date%></td>
+                <td class = "text-center col-2"><%=AirlineList[count].flight%></td>
+                <td class = "text-center col-1"><%=AirlineList[count].description%></td>
+                <td class = "col-6"><%=AirlineList[count].severity%></td>
+                <td class = "text-center col-1"><%=AirlineList[count].status%></td>
                 <td class ="text-center col-1"><a href="/airlineList/edit/<%=AirlineList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
                 <td class ="text-center col-1"><a href="/airlineList/delete/<%=AirlineList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>    
             </tr>

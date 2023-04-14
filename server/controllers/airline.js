@@ -2,6 +2,8 @@ let express = require ('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Airline = require('../model/airlines');
+
+
 module.exports.displayairlineList = (req,res,next)=>{
     Airline.find((err,airlineList)=>{
         if(err)
@@ -10,23 +12,23 @@ module.exports.displayairlineList = (req,res,next)=>{
         }
         else
         {
-         res.render('airline/list', {title:'Incidents', AirlineList:airlineList});
+         res.render('airline/list', {title:'Incidents', AirlineList:airlineList, displayName:req.user?req.user.displayName:'' });
         }
     });
 }
 
 module.exports.displayAddPage = (req,res,next)=>{
-    res.render('airline/add',{title:'Add Incident'})
+    res.render('airline/add',{title:'Add Incident', displayName:req.user?req.user.displayName:''})
 
 }
 
 module.exports.processAddPage = (req,res,next)=>{
     let newAirline = Airline({
-        "date": req.body.name,
-        "flight number":req.body.departure,
-        "description":req.body.arrival,
-        "severity":req.body.class,
-        "status":req.body.price
+        "date": req.body.date,
+        "flight":req.body.flight,
+        "description":req.body.description,
+        "severity":req.body.severity,
+        "status":req.body.status
     });
     Airline.create(newAirline,(err,Airline)=>{
         if(err)
@@ -51,7 +53,7 @@ module.exports.processAddPage = (req,res,next)=>{
                 }
                 else
                 {
-                    res.render('airline/edit',{title:'Edit Incident', airline: airlineToEdit});
+                    res.render('airline/edit',{title:'Edit Incident', airline: airlineToEdit, displayName:req.user?req.user.displayName:''});
                     
                 }
             });
@@ -62,11 +64,11 @@ module.exports.processAddPage = (req,res,next)=>{
             console.log(req.body);
             let updatedAirline = Airline({
                 "_id":id,
-                "date": req.body.name,
-                "flight number":req.body.departure,
-                "description":req.body.arrival,
-                "severity":req.body.class,
-                "status":req.body.price
+                "date": req.body.date,
+                "flight_number":req.body.flight,
+                "description":req.body.description,
+                "severity":req.body.severity,
+                "status":req.body.status
             });
             Airline.updateOne({_id:id}, updatedAirline,(err)=>{
                 if(err)
